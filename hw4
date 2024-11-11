@@ -21,8 +21,20 @@
 
 const Person = {};
 const Person = Object.create();
+
+
+const Person0 = {
+logInfo() {
+console.log(`Car: ${this.car}, Money: ${this.money}`);
+}
+}
+
+const Person = Object.create(Person0);
 Person.car = "bmw";
-Person.money = "100"; 
+Person.money = "100";
+logInfo: function() {
+return `${this.firstName} ${this.lastName}`
+}
 
 
 const Person2 = Object.create(Person);
@@ -30,5 +42,27 @@ const Person2 = Object.create(Person);
 
 
 4) Создать класс PersonThree c get и set для поля name и конструктором, сделать класс наследник от класса Person.
+
+class PersonThree extends Person {
+constructor(name, age) {
+nameage(name, age);
+}
+
+  get name() {
+  return this._name;
+  }
+
+  set name(value) {
+  this._name = value;
+  }
+}
+
+
+
+
+
+
+
+
 
 
